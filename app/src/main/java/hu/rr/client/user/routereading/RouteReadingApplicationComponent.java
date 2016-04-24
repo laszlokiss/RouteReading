@@ -6,7 +6,6 @@ import dagger.Component;
 import hu.rr.client.user.routereading.interactor.InteractorModule;
 import hu.rr.client.user.routereading.interactor.projects.ProjectsInteractor;
 import hu.rr.client.user.routereading.network.NetworkModule;
-import hu.rr.client.user.routereading.ui.Login.LoginActivity;
 import hu.rr.client.user.routereading.ui.UIModule;
 
 /**
@@ -17,7 +16,5 @@ import hu.rr.client.user.routereading.ui.UIModule;
 public interface RouteReadingApplicationComponent {
 
     void inject(ProjectsInteractor projectsInteractor);
-
-    void inject(LoginActivity loginActivity);
 
 }
