@@ -17,7 +17,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import hu.rr.client.user.routereading.R;
 import hu.rr.client.user.routereading.RouteReadingApplication;
-import hu.rr.client.user.routereading.ui.projects.ProjectsActivity;
+import hu.rr.client.user.routereading.ui.Projects.ProjectsActivity;
 
 /**
  * A login screen that offers login via email/password.

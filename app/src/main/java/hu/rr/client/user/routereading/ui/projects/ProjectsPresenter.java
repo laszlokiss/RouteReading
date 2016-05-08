@@ -1,4 +1,4 @@
-package hu.rr.client.user.routereading.ui.projects;
+package hu.rr.client.user.routereading.ui.Projects;
 
 import hu.rr.client.user.routereading.ui.Presenter;
 

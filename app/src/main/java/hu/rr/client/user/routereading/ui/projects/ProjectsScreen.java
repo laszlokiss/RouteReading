@@ -1,4 +1,4 @@
-package hu.rr.client.user.routereading.ui.projects;
+package hu.rr.client.user.routereading.ui.Projects;
 
 /**
  * Created by Laci on 2016.04.24..
