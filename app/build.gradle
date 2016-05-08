@@ -18,6 +18,16 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    productFlavors {
+        mock {
+            applicationId = "hu.rr.client.user.routereading.mock"
+            buildConfigField 'boolean', 'MOCK', 'true'
+        }
+        prod {
+            applicationId = "hu.rr.client.user.routereading"
+            buildConfigField 'boolean', 'MOCK', 'false'
+        }
+    }
     lintOptions {
         abortOnError false
     }
@@ -42,4 +52,5 @@ dependencies {
 
     // Needed for @Generated annotation (missing in Java <= 1.6; therefore, Android)
     compile 'javax.annotation:jsr250-api:1.0'
+    compile 'com.github.satyan:sugar:1.4'
 }
