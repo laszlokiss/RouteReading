@@ -1,4 +1,4 @@
-package hu.rr.client.user.routereading.interactor.projects;
+package hu.rr.client.user.routereading.interactor.Project;
 
 import javax.inject.Inject;
 

@@ -1,4 +1,4 @@
-package hu.rr.client.user.routereading.interactor.projects.event;
+package hu.rr.client.user.routereading.interactor.Project.event;
 
 /**
  * Created by Laci on 2016.04.24..
