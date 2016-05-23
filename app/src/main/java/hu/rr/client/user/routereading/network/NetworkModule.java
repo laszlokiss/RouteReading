@@ -24,8 +24,8 @@ public class NetworkModule {
 
     @Provides
     @Singleton
-    public ProjectsApi provideProjectsApi(Retrofit retrofit) {
-        return retrofit.create(ProjectsApi.class);
+    public ProjectApi provideProjectsApi(Retrofit retrofit) {
+        return retrofit.create(ProjectApi.class);
     }
 
 }

@@ -1,40 +1,64 @@
 package hu.rr.client.user.routereading.ui.Projects;
 
-import android.support.v7.widget.RecyclerView;
+import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.TextView;
+
+import java.util.List;
+
+import hu.rr.client.user.routereading.R;
+import hu.rr.client.user.routereading.model.Project;
 
 /**
  * Created by Laci on 2016.04.24..
  */
-public class ProjectsAdapter extends RecyclerView.Adapter<ProjectsAdapter.ViewHolder> {
+public class ProjectsAdapter extends BaseAdapter {
 
-    public ProjectsAdapter() {
+    private Context context;
+    private List<Project> projectList;
+    private static LayoutInflater inflater;
 
-    }
-
-    public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        // TODO
-        return null;
-    }
-
-    @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
-        // TODO
+    public ProjectsAdapter(Context context, List<Project> projects) {
+        this.context = context;
+        this.projectList = projects;
+        inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
     @Override
-    public int getItemCount() {
-        // TODO
-        return 0;
+    public int getCount() {
+        return projectList.size();
     }
 
-    protected static class ViewHolder extends RecyclerView.ViewHolder {
+    @Override
+    public Object getItem(int position) {
+        return projectList.get(position);
+    }
 
+    @Override
+    public long getItemId(int position) {
+        return projectList.get(position).getId();
+    }
 
-        public ViewHolder(View itemView) {
-            super(itemView);
-            // TODO
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        View view = convertView;
+        if (view==null) {
+            inflater.inflate(R.layout.project_list_item, null);
         }
+
+        TextView projectName = (TextView) view.findViewById(R.id.projectName);
+        TextView startDate = (TextView) view.findViewById(R.id.startDate);
+        TextView endDate = (TextView) view.findViewById(R.id.endDate);
+
+        Project currentItem = projectList.get(position);
+
+        projectName.setText(currentItem.getName());
+        startDate.setText(currentItem.getStartdate().toString());
+        endDate.setText(currentItem.getEnddate().toString());
+
+        return view;
     }
 }

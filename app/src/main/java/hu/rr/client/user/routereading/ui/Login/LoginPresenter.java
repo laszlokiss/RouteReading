@@ -28,9 +28,15 @@ public class LoginPresenter extends Presenter<LoginScreen> {
 
     public void login(String username, String password) {
         User user = new User(username, password);
-        authInteractor.login(user);
-        //screen.navigateToProjectsList();
-        //TODO
+        User loggedInUser;
+        try {
+            loggedInUser = authInteractor.login(user);
+        } catch (Exception e) {
+            loggedInUser = authInteractor.loginFromDB(user);
+        }
+        if (user != null) {
+            screen.navigateToProjectsList();
+        }
     }
 
 }

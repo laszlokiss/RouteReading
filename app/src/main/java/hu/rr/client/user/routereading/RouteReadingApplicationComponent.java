@@ -12,8 +12,11 @@ import hu.rr.client.user.routereading.repository.prod.ProdRepositoryModule;
 import hu.rr.client.user.routereading.ui.Login.LoginActivity;
 import hu.rr.client.user.routereading.ui.Login.LoginPresenter;
 import hu.rr.client.user.routereading.ui.Projects.ProjectsActivity;
-import hu.rr.client.user.routereading.ui.RouteReadingDetails.RouteReadingDetailsActivity;
-import hu.rr.client.user.routereading.ui.RouteReadingList.RouteReadingListActivity;
+import hu.rr.client.user.routereading.ui.Projects.ProjectsPresenter;
+import hu.rr.client.user.routereading.ui.RouteReadingDetails.RouteReadingDetailsFragment;
+import hu.rr.client.user.routereading.ui.RouteReadingDetails.RouteReadingDetailsPresenter;
+import hu.rr.client.user.routereading.ui.RouteReadingList.RouteReadingListFragment;
+import hu.rr.client.user.routereading.ui.RouteReadingList.RouteReadingListPresenter;
 import hu.rr.client.user.routereading.ui.UIModule;
 
 /**
@@ -29,9 +32,9 @@ public interface RouteReadingApplicationComponent {
 
     void inject(LoginActivity loginActivity);
 
-    void inject(RouteReadingListActivity routeReadingListActivity);
+    void inject(RouteReadingListFragment routeReadingListFragment);
 
-    void inject(RouteReadingDetailsActivity routeReadingDetailsActivity);
+    void inject(RouteReadingDetailsFragment routeReadingDetailsFragment);
 
     void inject(AuthInteractor authInteractor);
 
@@ -40,4 +43,10 @@ public interface RouteReadingApplicationComponent {
     void inject(LoginPresenter loginPresenter);
 
     void inject(ProjectsActivity projectsActivity);
+
+    void inject(ProjectsPresenter projectsPresenter);
+
+    void inject(RouteReadingListPresenter routeReadingListPresenter);
+
+    void inject(RouteReadingDetailsPresenter routeReadingDetailsPresenter);
 }

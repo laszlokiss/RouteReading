@@ -2,6 +2,10 @@ package hu.rr.client.user.routereading.repository;
 
 import android.content.Context;
 
+import java.util.List;
+
+import hu.rr.client.user.routereading.model.Project;
+import hu.rr.client.user.routereading.model.RouteReading;
 import hu.rr.client.user.routereading.model.User;
 
 /**
@@ -13,6 +17,13 @@ public interface Repository {
 
     void terminate();
 
-    void login(User user);
+    User login(User user);
 
+    List<Project> getProjects();
+
+    void deleteRouteReading(String routeReadingId);
+
+    void addRouteReading(RouteReading routeReading);
+
+    void modifyRouteReading(RouteReading routeReading);
 }

@@ -1,6 +1,5 @@
 package hu.rr.client.user.routereading.model;
 
-import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import com.orm.SugarRecord;
 
@@ -9,13 +8,14 @@ import com.orm.SugarRecord;
  */
 public class User extends SugarRecord {
 
+    @SerializedName("id")
+    private String userId = null;
+
     @SerializedName("name")
-    @Expose
-    private String name;
+    private String name = null;
 
     @SerializedName("password")
-    @Expose
-    private String password;
+    private String password = null;
 
     public User() {
     }
@@ -23,6 +23,20 @@ public class User extends SugarRecord {
     public User(String name, String password) {
         this.name = name;
         this.password = password;
+    }
+
+    public User(String id, String name, String password) {
+        this.userId = id;
+        this.name = name;
+        this.password = password;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String id) {
+        this.userId = id;
     }
 
     public String getName() {
