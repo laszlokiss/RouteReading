@@ -7,7 +7,6 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.ProgressBar;
 import android.widget.ScrollView;
 
 import javax.inject.Inject;
@@ -27,8 +26,6 @@ public class LoginActivity extends AppCompatActivity implements LoginScreen {
     @Inject
     LoginPresenter loginPresenter;
 
-    @Bind(R.id.login_progress)
-    ProgressBar loginProgress;
     @Bind(R.id.email)
     AutoCompleteTextView email;
     @Bind(R.id.password)

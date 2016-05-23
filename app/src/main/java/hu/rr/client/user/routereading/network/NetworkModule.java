@@ -28,4 +28,15 @@ public class NetworkModule {
         return retrofit.create(ProjectApi.class);
     }
 
+    @Provides
+    @Singleton
+    public AuthApi provideAuthApi(Retrofit retrofit) {
+        return retrofit.create(AuthApi.class);
+    }
+
+    @Provides
+    @Singleton
+    public RoutereadingApi provideRouteReadingApi(Retrofit retrofit) {
+        return retrofit.create(RoutereadingApi.class);
+    }
 }
